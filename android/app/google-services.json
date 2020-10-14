@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "636551708697",
+    "firebase_url": "https://privacy-news-app.firebaseio.com",
+    "project_id": "privacy-news-app",
+    "storage_bucket": "privacy-news-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636551708697:android:155e07fe0f0fa0bd466a88",
+        "android_client_info": {
+          "package_name": "com.example.sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636551708697-ehllekdcs7fi677n1v4tp4djtius16r8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1NcZmo70OGDL4hn2Exa_ANptC7H3GloA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "636551708697-ehllekdcs7fi677n1v4tp4djtius16r8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
