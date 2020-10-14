@@ -22,8 +22,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class ViewArticle extends StatelessWidget {
-  final String img;
-  ViewArticle(this.img);
+  final String img,body;
+
+  ViewArticle(this.img,this.body);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,12 +39,12 @@ class ViewArticle extends StatelessWidget {
             ),
           ),
           SliverToBoxAdapter(child: Container(child:
-            Text("""A NoSQL (originally referring to "non-SQL" or "non-relational")[1] database provides a mechanism for storage and retrieval of data that is modeled in means other than the tabular relations used in relational databases. Such databases have existed since the late 1960s, but the name "NoSQL" was only coined in the early 21st century,[2] triggered by the needs of Web 2.0 companies.[3][4] NoSQL databases are increasingly used in big data and real-time web applications.[5] NoSQL systems are also sometimes called "Not only SQL" to emphasize that they may support SQL-like query languages or sit alongside SQL databases in polyglot-persistent architectures.[6][7]
-
-                Motivations for this approach include: simplicity of design, simpler "horizontal" scaling to clusters of machines (which is a problem for relational databases),[2] finer control over availability and limiting the object-relational impedance mismatch.[8] The data structures used by NoSQL databases (e.g. key–value pair, wide column, graph, or document) are different from those used by default in relational databases, making some operations faster in NoSQL. The particular suitability of a given NoSQL database depends on the problem it must solve. Sometimes the data structures used by NoSQL databases are also viewed as "more flexible" than relational database tables.[9]
-
-          Many NoSQL stores compromise consistency (in the sense of the CAP theorem) in favor of availability, partition tolerance, and speed. Barriers to the greater adoption of NoSQL stores include the use of low-level query languages (instead of SQL, for instance), lack of ability to perform ad-hoc joins across tables, lack of standardized interfaces, and huge previous investments in existing relational databases.[10] Most NoSQL stores lack true ACID transactions, although a few databases have made them central to their designs. """,
-            style: TextStyle(fontSize: 20),)
+            RichText(textAlign: TextAlign.center,
+              text: TextSpan(
+              children:[
+                TextSpan(text: body,style: TextStyle(fontSize: 20))
+              ]
+            ),)
           ),)
         ],
       ),
@@ -76,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => ViewArticle(docSnap['img'])));
+                            builder: (_) => ViewArticle(docSnap['img'],docSnap['body'])));
                   },
                   child: Card(
                     elevation: 10,
